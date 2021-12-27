@@ -43,6 +43,7 @@ function get_upload_type {
 function upload {
 	curl -s \
 	     -H "Authorization: Client-ID $client_id" \
+	     -H "Expect: " \
 	     -F "$2=$1" \
 	     "https://api.imgur.com/3/upload"
 	# The "Expect: " header is to get around a problem when using this through
